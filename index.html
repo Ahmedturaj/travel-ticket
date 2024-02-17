@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-ticket</title>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css file link -->
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="container mx-auto">
+        <!-- navBar -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-raleWay font-medium">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Description</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost font-raleWay text-xl md:text-3xl font-extrabold">Travel-ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 md:gap-10">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Description</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end ">
+                    <a
+                        class="btn flex justify-center items-center bg-[#1DD1001A] text-xl font-bold text-[#1DD100] md:gap-4">Bus
+                        <img src="./images/bus-icon.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- banner part -->
+
+        <div
+            class="bg-url bg-[url(./images/banner.png)] bg-no-repeat bg-cover bg-gradient-to-r-[#030712] h-[100vh] mt-8">
+            <div class="flex flex-col  justify-center items-center
+            md:h-[100vh] text-center  md:gap-10 p-4">
+                <h1 class="text-white text-3xl md:text-7xl font-extrabold font-raleWay">End-to-End Travel with <span
+                        class="text-[#1DD100]">Satkhira Paribahan</span></h1>
+                <p class="font-inter text-xl text-white font-medium">Embark on adventures that ignite your soul. Discover, explore,
+                    and create unforgettable memories with us.</p>
+                <button class="font-raleWay text-xl text-black bg-[#1DD100] font-bold p-2 rounded-md">Buy
+                    Tickets</button>
+            </div>
+
+        </div>
+        <!-- badge -->
+        <div class="flex flex-col md:flex-row justify-evenly  items-center md:relative md:-top-10">
+            <div class="flex justify-center items-center gap-3 border-b-4 border-[#1DD100] p-4 bg-white rounded-3xl">
+                <div class="border-2 border-dotted rounded"> <img src="./images/people.png" alt=""></div>
+                <div class="">
+                    <h2 class="text-4xl font-bold font-raleWay">500k+</h2>
+                    <p class="font-inter">Registered users</p>
+                </div>
+            </div>
+            <div class="flex justify-center items-center gap-3 border-b-4 border-[#1DD100] p-4 bg-white rounded-3xl">
+                <div class="border-2 border-dotted rounded"> <img src="./images/people.png" alt=""></div>
+                <div class="">
+                    <h2 class="text-4xl font-bold font-raleWay">1.7 lacks</h2>
+                    <p class="font-inter">Ticket sold</p>
+                </div>
+            </div>
+            <div class="flex justify-center items-center gap-3 border-b-4 border-[#1DD100] p-4 bg-white rounded-3xl">
+                <div class="border-2 border-dotted rounded"> <img src="./images/stoppage.png" alt=""></div>
+                <div class="">
+                    <h2 class="text-4xl font-bold font-raleWay">80k+</h2>
+                    <p class="font-inter">Rental partners</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
