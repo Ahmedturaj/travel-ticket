@@ -101,24 +101,26 @@ document.getElementById('btn-apply').addEventListener('click', function () {
 
 document.getElementById('btn-next').addEventListener('click', function () {
     const nameElement = document.getElementById('name');
-    const name = nameElement.value.trim(); // Trim whitespace from the input
+    const name = nameElement.value;
     const phoneNumberElement = document.getElementById('phone-number');
-    const phoneNumber = phoneNumberElement.value.trim(); // Trim whitespace from the input
+    const phoneNumber = phoneNumberElement.value;
     const emailElement = document.getElementById('email');
-    const email = emailElement.value.trim(); // Trim whitespace from the input
+    const email = emailElement.value;
     const totalPriceElement = document.getElementById('total-price');
-    const totalPrice = totalPriceElement.innerText; // Trim whitespace from the input
+    const totalPrice = totalPriceElement.innerText;
 
     if (!name || !phoneNumber || !email || !totalPrice) {
         alert("Failed: Please fill in all required fields.");
-    } else if (isNaN(phoneNumber) || !isValidPhoneNumber(phoneNumber)) {
+    } else if (!isValidPhoneNumber(phoneNumber)) {
         alert("Failed: Phone number must be a valid number.");
-    } else if (isNaN(totalPrice)) {
+    } else if (isNaN(parseFloat(totalPrice))) {
         alert("Failed: Total price is not valid.");
     } else {
         const modal = document.getElementById('my_modal_1');
         modal.showModal();
-        reset()
+        nameElement.value = "";
+        phoneNumberElement.value = "";
+        emailElement.value = "";
     }
 });
 
@@ -130,4 +132,3 @@ function isValidPhoneNumber(phoneNumber) {
     }
     return true;
 }
-
