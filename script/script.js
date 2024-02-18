@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let bookedSeat = 0;
     let totalSeats = elements.length;
     let totalPrice = 0;
+    let bookedSeatsSet = new Set(); // Set to store booked seats
 
     totalSeatElement.innerText = totalSeats;
     bookedSeatElement.innerText = bookedSeat;
@@ -22,31 +23,39 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let element of elements) {
         element.addEventListener("click", function () {
             if (bookedSeat < 4) { // Check if less than 4 seats are booked
-                element.style.backgroundColor = "#1DD100";
-                bookedSeat++;
-                totalSeats--;
-                totalSeatElement.innerText = totalSeats;
-                bookedSeatElement.innerText = bookedSeat;
+                if (!bookedSeatsSet.has(element.id)) { // Check if seat is not already booked
+                    element.style.backgroundColor = "#1DD100";
+                    bookedSeat++;
+                    totalSeats--;
+                    totalSeatElement.innerText = totalSeats;
+                    bookedSeatElement.innerText = bookedSeat;
 
-                // Update total price
-                totalPrice += parseFloat(ticketPriceElement.innerText);
-                totalPriceElement.innerText = totalPrice.toFixed(2);
+                    // Update total price
+                    totalPrice += parseFloat(ticketPriceElement.innerText);
+                    totalPriceElement.innerText = totalPrice.toFixed(2);
 
-                const seatInfo = document.createElement("div");
-                seatInfo.innerHTML = `<div class="flex justify-between items-center p-2">
-                    <h2 class="text-xl font-inter">${element.id}</h2>
-                    <h2 class="text-xl font-inter">Economy</h2>
-                    <h2 class="text-xl font-inter">${ticketPriceElement.innerText}</h2>          
-                </div> `;
+                    // Add seat to booked seats set
+                    bookedSeatsSet.add(element.id);
 
-                const seatInfoElement = document.getElementById("seat-info");
-                seatInfoElement.appendChild(seatInfo);
+                    const seatInfo = document.createElement("div");
+                    seatInfo.innerHTML = `<div class="flex justify-between items-center p-2">
+                        <h2 class="text-xl font-inter">${element.id}</h2>
+                        <h2 class="text-xl font-inter">Economy</h2>
+                        <h2 class="text-xl font-inter">${ticketPriceElement.innerText}</h2>          
+                    </div> `;
+
+                    const seatInfoElement = document.getElementById("seat-info");
+                    seatInfoElement.appendChild(seatInfo);
+                } else {
+                    alert("You have already booked this seat.");
+                }
             } else {
                 alert("You can not book more than 4 seats.");
             }
         });
     }
 });
+
 
 
 
@@ -113,6 +122,7 @@ document.getElementById('btn-next').addEventListener('click', function () {
     } else {
         const modal = document.getElementById('my_modal_1');
         modal.showModal();
+        reset()
     }
 });
 
