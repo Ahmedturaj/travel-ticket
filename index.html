@@ -13,6 +13,8 @@
 </head>
 
 <body class="p-4">
+
+
     <!-- header -->
     <header class="container mx-auto">
         <!-- navBar -->
@@ -455,6 +457,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <!-- .................. -->
 
                 <div class="flex-1">
@@ -490,45 +494,35 @@
                         </div>
                         <div class="w-full">
                             <div class="w-full hero min-h-screen bg-white">
-                                <div class=" shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                    <form class="card-body">
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text text-xl font-semibold">Passenger Name*</span>
-                                            </label>
-                                            <input type="type" placeholder="Enter your name"
-                                                class="input input-bordered" required />
-                                        </div>
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text text-xl font-semibold">Phone Number*</span>
-                                            </label>
-                                            <input type="text" placeholder="Enter your Phone Number"
-                                                class="input input-bordered" required />
-                                            
-                                        </div>
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text text-xl font-semibold">Email ID</span>
-                                            </label>
-                                            <input type="text" placeholder="Enter your email id"
-                                                class="input input-bordered" required />
-                                            
-                                        </div>
-                                        <div class="form-control mt-6">
-                                            <button id="btn-next" class="btn w-full text-white bg-[#1DD100]
+                                <div class=" shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
+                                    <div class="w-full">
+                                        <span class="label-text text-xl font-semibold mb-5">Passenger Name*</span>
+                                        <input id="name" type="type" placeholder="Enter your name"
+                                            class="input input-bordered w-full p-3 border rounded-xl" required />
+                                    </div>
+                                    <div>
+                                        <span class="label-text text-xl font-semibold">Phone Number*</span>
+                                        <input id="phone-number" type="text" placeholder="Enter your Phone Number"
+                                            class="input input-bordered w-full p-3 border rounded-xl" required />
+
+                                    </div>
+                                    <div>
+                                        <span class="label-text text-xl font-semibold">Email ID</span>
+                                        <input id="email" type="text" placeholder="Enter your email id"
+                                            class="input input-bordered w-full p-3 border rounded-xl" required />
+                                    </div>
+                                    <div class="mt-5">
+                                        <button  id="btn-next" class="btn w-full text-white bg-[#1DD100]
                                             text-xl font-semibold">Next</button>
-                                            <div class="flex justify-between items-center mt-5">
-                                                <label class="label">
-                                                    <a href="#" class="label-text-alt link link-hover">Terms and
-                                                        Conditions</a>
-                                                </label>
-                                                <label class="label">
-                                                    <a href="#" class="label-text-alt link link-hover">Cancellation Policy</a>
-                                                </label>
-                                            </div>
+                                    </div>
+                                    <div class=" mt-6">
+                                        <div class="flex justify-between items-center mt-5"><a
+                                                class="label-text-alt link link-hover">Terms and
+                                                Conditions</a>
+                                            <a class="label-text-alt link link-hover">Cancellation
+                                                Policy</a>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
 
                             </div>
@@ -542,6 +536,19 @@
 
     </footer>
 
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">Success!</h3>
+        <p class="py-4">Your form has been successfully submitted.</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn" onclick="my_modal_1.close()">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    
     <!-- script -->
     <script src="./script/script.js"></script>
 </body>
