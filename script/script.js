@@ -15,28 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let bookedSeat = 0;
     let totalSeats = elements.length;
     let totalPrice = 0;
-    let bookedSeatsSet = new Set(); // Set to store booked seats
+    let bookedSeats = [];
 
     totalSeatElement.innerText = totalSeats;
     bookedSeatElement.innerText = bookedSeat;
 
     for (let element of elements) {
         element.addEventListener("click", function () {
-            if (bookedSeat < 4) { // Check if less than 4 seats are booked
-                if (!bookedSeatsSet.has(element.id)) { // Check if seat is not already booked
+            if (bookedSeat < 4) {
+                if (!bookedSeats.includes(element.id)) {
                     element.style.backgroundColor = "#1DD100";
                     bookedSeat++;
                     totalSeats--;
                     totalSeatElement.innerText = totalSeats;
                     bookedSeatElement.innerText = bookedSeat;
-
-                    // Update total price
                     totalPrice += parseFloat(ticketPriceElement.innerText);
                     totalPriceElement.innerText = totalPrice.toFixed(2);
-
-                    // Add seat to booked seats set
-                    bookedSeatsSet.add(element.id);
-
+                    bookedSeats.push(element.id);
                     const seatInfo = document.createElement("div");
                     seatInfo.innerHTML = `<div class="flex justify-between items-center p-2">
                         <h2 class="text-xl font-inter">${element.id}</h2>
@@ -55,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 
 
