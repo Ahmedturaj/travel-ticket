@@ -239,7 +239,7 @@
                                 <svg class="" width="26.000000" height="26.000000" viewBox="0 0 26 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <desc>
-                                       
+
                                     </desc>
                                     <defs />
                                     <path id="Vector"
@@ -479,12 +479,58 @@
                                 <h2 class="text-xl font-raleWay font-bold">BDT.<span id="discount-price"></span></h2>
                             </div>
                             <div id="coupon-input-container" class="p-2 w-full flex items-center">
-                                <input id="coupon-input" class="w-full p-5 rounded-xl font-inter" type="text" placeholder="Have any coupon?">
+                                <input id="coupon-input" class="w-full p-5 rounded-xl font-inter" type="text"
+                                    placeholder="Have any coupon?">
                                 <button id="btn-apply" class="btn absolute bg-[#1DD100] right-36">Apply</button>
                             </div>
                             <div class="flex justify-between items-center my-2 p-2">
                                 <h1 class="text-xl font-raleWay font-bold">Grand Total :</h1>
                                 <h2 class="text-xl font-raleWay font-bold">BDT.<span id="grand-total"></span></h2>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full hero min-h-screen bg-white">
+                                <div class=" shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                                    <form class="card-body">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="label-text text-xl font-semibold">Passenger Name*</span>
+                                            </label>
+                                            <input type="type" placeholder="Enter your name"
+                                                class="input input-bordered" required />
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="label-text text-xl font-semibold">Phone Number*</span>
+                                            </label>
+                                            <input type="text" placeholder="Enter your Phone Number"
+                                                class="input input-bordered" required />
+                                            
+                                        </div>
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="label-text text-xl font-semibold">Email ID</span>
+                                            </label>
+                                            <input type="text" placeholder="Enter your email id"
+                                                class="input input-bordered" required />
+                                            
+                                        </div>
+                                        <div class="form-control mt-6">
+                                            <button id="btn-next" class="btn w-full text-white bg-[#1DD100]
+                                            text-xl font-semibold">Next</button>
+                                            <div class="flex justify-between items-center mt-5">
+                                                <label class="label">
+                                                    <a href="#" class="label-text-alt link link-hover">Terms and
+                                                        Conditions</a>
+                                                </label>
+                                                <label class="label">
+                                                    <a href="#" class="label-text-alt link link-hover">Cancellation Policy</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -497,7 +543,7 @@
     </footer>
 
     <!-- script -->
-    <script src="./script/ulities.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
