@@ -537,13 +537,17 @@
     </footer>
 
     <dialog id="my_modal_1" class="modal">
-      <div class="modal-box">
-        <h3 class="font-bold text-lg">Success!</h3>
-        <p class="py-4">Your form has been successfully submitted.</p>
-        <div class="modal-action">
+      <div class="modal-box flex flex-col justify-center items-center">
+        <img src="./images/success.png" alt="">
+        <h3 class="font-bold text-center text-[#1DD100] text-2xl">Success</h3>
+        <h3 class="font-bold text-center text-[#1DD100] text-xl">Thank you for Booking Our Bus Seats. <br>
+            We are working hard to find the best service and deals for you. 
+            </h3>
+        <p class="py-4 text-center">Shortly you will find a confirmation in your email.</p>
+        <div class="modal-action w-full">
           <form method="dialog">
             <!-- if there is a button in form, it will close the modal -->
-            <button class="btn" onclick="my_modal_1.close()">Close</button>
+            <button class="btn text-center w-full mx-auto rounded-full" onclick="my_modal_1.close()">Close</button>
           </form>
         </div>
       </div>
