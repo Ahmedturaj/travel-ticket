@@ -23,21 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let element of elements) {
         element.addEventListener("click", function () {
-            element.style.backgroundColor = "green";
+            element.style.backgroundColor = "#1DD100";
             bookedSeat++;
             totalSeats--;
             totalSeatElement.innerText = totalSeats;
             bookedSeatElement.innerText = bookedSeat;
-            
+
             // Update total price
             totalPrice += parseFloat(ticketPriceElement.innerText);
             totalPriceElement.innerText = totalPrice.toFixed(2);
 
             const seatInfo = document.createElement("div");
             seatInfo.innerHTML = `<div class="flex justify-between items-center p-2">
-                <h2 class="text-xl font-raleWay">${element.id}</h2>
-                <h2 class="text-xl font-raleWay">Economy</h2>
-                <h2 class="text-xl font-raleWay">${ticketPriceElement.innerText}</h2>          
+                <h2 class="text-xl font-inter">${element.id}</h2>
+                <h2 class="text-xl font-inter">Economy</h2>
+                <h2 class="text-xl font-inter">${ticketPriceElement.innerText}</h2>          
             </div> `;
 
             const seatInfoElement = document.getElementById("seat-info");
@@ -47,34 +47,43 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.getElementById('btn-apply').addEventListener('click', function () {
+    const coupon1Element = document.getElementById('coupon-1');
+    const coupon1 = coupon1Element.innerText;
+    const coupon2Element = document.getElementById('coupon-2');
+    const coupon2 = coupon2Element.innerText;
+    const couponInputElement = document.getElementById('coupon-input');
+    const couponInput = couponInputElement.value;
+    const totalPriceElement = document.getElementById('total-price');
+    const totalPrice = parseInt(totalPriceElement.innerText);
+    if (couponInput === coupon1 || couponInput === coupon2) {
+        if (couponInput === coupon1 && !isNaN(totalPrice)) {
+            const discountPercentage = 15;
+            const discountAmount = (totalPrice * discountPercentage) / 100;
+            const discountedPrice = totalPrice - discountAmount;
+            const discountBDTElement = document.getElementById('discount-price');
+             discountBDTElement.innerText =discountAmount
+            document.getElementById('discount').classList.remove('hidden');
+            const grandTotalElement = document.getElementById('grand-total');
+            grandTotalElement.innerText= discountedPrice;
+        }else if(couponInput === coupon2 && !isNaN(totalPrice)){
+            const discountPercentage = 20;
+            const discountAmount = (totalPrice * discountPercentage) / 100;
+            const discountedPrice = totalPrice - discountAmount;
+            const discountBDTElement = document.getElementById('discount-price');
+             discountBDTElement.innerText =discountAmount
+            document.getElementById('discount').classList.remove('hidden');
+            const grandTotalElement = document.getElementById('grand-total');
+            grandTotalElement.innerText= discountedPrice;
+        }else{
+            alert('Please Select Your Seat First');
+            couponInputElement.value = '';
+        }
+        const couponInputContainer = document.getElementById('coupon-input-container');
+        couponInputContainer.classList.add('hidden');
+    } else {
+        alert('Your Coupon code is not valid.')
+        couponInputElement.value = '';
+    }
 
-
-
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     for (let letter of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']) {
-//         for (let number of [1, 2, 3, 4]) {
-//             let id = letter + number;
-//             let element = document.getElementById(id);
-//             let total = 8;
-//             if (element && total !== 0) {
-//                 element.addEventListener("click", function () {
-
-//                     element.style.backgroundColor = "#1DD100";
-
-//                     const totalSeat = document.getElementById('total-seat');
-//                     for (let i = 8; i < totalSeat; i--) {
-//                         totalSeat.innerText = i;
-//                     }
-
-//                 });
-//             }
-//         }
-//     }
-// });
+});
